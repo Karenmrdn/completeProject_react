@@ -11,7 +11,6 @@ function App() {
     { id: 4, title: "Keyboard", price: 200, date: new Date(2021, 4, 14) },
     { id: 5, title: "TV", price: 600, date: new Date(2020, 5, 15) },
   ];
-  const filterValue = null;
 
   const addExpenseHandler = (expense) => {
     console.log(expense);
@@ -20,7 +19,7 @@ function App() {
   return (
     <Card>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses data={data} />
+      <Expenses data={data}  />
     </Card>
   );
 }

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import ExpenseItem from "./ExpenseItem";
 import "./Expenses.css";
 import Card from "../UI/Card";
 import FilterExpenses from "./FilterExpenses";
 
 function Expenses({ data }) {
+  const [filteringYear, setFilteringYear] = useState(null);
+
   return (
     <Card className="expenses">
       <div>
