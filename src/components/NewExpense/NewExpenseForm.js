@@ -33,8 +33,8 @@ function NewExpenseForm(props) {
 
     const expense = {
       title: enteredTitle,
-      price: enteredPrice,
-      date: enteredDate,
+      price: +enteredPrice,
+      date: new Date(enteredDate),
     };
 
     props.onSaveExpenseData(expense);
@@ -74,12 +74,15 @@ function NewExpenseForm(props) {
             value={enteredDate}
             type="date"
             id="date"
-            min="2019-01-01"
+            min="2018-01-01"
             max="2022-12-31"
           />
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={props.onCancel}>
+          Cancel
+        </button>
         <button type="submit">Add expense</button>
       </div>
     </form>
